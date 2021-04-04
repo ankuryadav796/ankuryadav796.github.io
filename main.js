@@ -1,4 +1,5 @@
-var retina = window.devicePixelRatio,
+var retina = 1,
+//window.devicePixelRatio,
 
     // Math shorthands
     PI = Math.PI,

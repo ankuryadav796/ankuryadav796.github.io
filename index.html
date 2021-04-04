@@ -29,8 +29,9 @@
     bottom: 0;
 	text-align:center;
 	width: 100%;
+	z-index:9;
 	}
-	@media(min-widthL:550px){
+	@media(min-width:550px){
 	.svg-wrapper{
 	width: 539px;
 	height: 409px;
@@ -39,7 +40,7 @@
 	font-size: 24px;
 	}
 	}
-	@media(min-widthL:992px){
+	@media(min-width:992px){
 	.svg-wrapper{
 	width: 1078px;
 	height: 819px;
@@ -48,9 +49,19 @@
 	font-size: 29px;
 	}
 	}
+	.audio{
+	z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+	}
 	</style>
 </head>
-<body>
+<body style="overflow: hidden;">
+<audio loop="loop" id="musicplayer" autoplay>
+  <source src="assets/audio/hbd.mp3" type="audio/mpeg">
+</audio>
 <div class="msg-text">
 Happy birthday to the coolest little guy. Wishing you all the best for your future, brother.
 </div>
@@ -601,5 +612,11 @@ Happy birthday to the coolest little guy. Wishing you all the best for your futu
 </svg>
 </div>
 <script src="main.js"></script>
+<script>
+ window.addEventListener('click', function () {
+let music = document.getElementById("musicplayer");
+music.play();
+});
+</script>
 </body>
 </html>
